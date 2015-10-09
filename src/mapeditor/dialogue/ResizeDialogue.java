@@ -23,6 +23,11 @@ import mapeditor.MainState;
  */
 public class ResizeDialogue extends JFrame
 {
+    /** Used for upscaling the map */
+    public static final int UPSCALE = 0;
+    /** Used for downscaling the map */
+    public static final int DOWNSCALE = 1;
+    
     private GridLayout layout;
     
     private JLabel leftLabel;
@@ -115,12 +120,12 @@ public class ResizeDialogue extends JFrame
 		int right = getValue(rightText);
 		int bottom = getValue(bottomText);
 		int top = getValue(topText);
-		String action = "";
+		int action = 0;
 		
 		if(upscaleRadioButton.isSelected())
-		    action = "upscale";
+		    action = UPSCALE;
 		if(downscaleRadioButton.isSelected())
-		    action = "downscale";
+		    action = DOWNSCALE;
 		
 		mainState.resizeMap(left, right, top, bottom, action);
 		dispose();

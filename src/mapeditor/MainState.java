@@ -113,7 +113,7 @@ public class MainState
 	this.imageFile = imageFile;
     }
     
-    public void resizeMap(int left, int right, int top, int bottom, String action)
+    public void resizeMap(int left, int right, int top, int bottom, int action)
     {
 	tileMap.resize(left, right, top, bottom, action);
     }

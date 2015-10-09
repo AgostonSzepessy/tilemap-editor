@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import mapeditor.MapEditorPanel;
+import mapeditor.dialogue.ResizeDialogue;
 import mapeditor.managers.Camera;
 import mapeditor.managers.Input;
 
@@ -489,10 +490,10 @@ public class TileMap
      * @param right Amount to add/subtract from the right side.
      * @param top Amount to add/subtract from the top side.
      * @param bottom Amount to add/subtract from the bottom side.
-     * @param action Subtract or add to the tilemap. To add use "upscale",
-     *		     and to subtract use "downscale."
+     * @param action Subtract or add to the tilemap. To add use 
+     * ResizeDialogue.UPSCALE and to subtract use ResizeDialogue.DOWNSCALE.
      */
-    public void resize(int left, int right, int top, int bottom, String action)
+    public void resize(int left, int right, int top, int bottom, int action)
     {
 	// array to back the map up to
 	int[][] temp = new int[mapHeight][mapWidth];
@@ -506,7 +507,7 @@ public class TileMap
 	    }
 	}
 	
-	if(action.equals("upscale"))
+	if(action == ResizeDialogue.UPSCALE)
 	{
 	    /*
 	    in order to transfer new tiles while keeping the old ones
@@ -532,7 +533,7 @@ public class TileMap
 	    camera.setXBounds((mapWidth - 1) * tileSize);
 	    camera.setYBounds((mapHeight - 1) * tileSize);
 	}
-	if(action.equals("downscale"))
+	if(action == ResizeDialogue.DOWNSCALE)
 	{
 	    /*
 	    in order to reduce the size, the amount to reduce the map by needs 
