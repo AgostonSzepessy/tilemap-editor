@@ -54,3 +54,8 @@ The image must be formatted as follows:
 The image must be made up of two rows, each multiples of the tilesize. E.g. if a tile is 64 pixels, then the tileset's height must be 128 pixels and it's width must be 64 * n. The reason for this is because in games there are some tiles that the player can go through, and some that the player is not able to go through. Thus, one of the rows would be a set of tiles that the player could not go through and the other row could be the tiles that the player can go through.
 The first tile in the first row must be a transparent image, because wherever the user did not put a tile, the tilemap editor will mark that with a 0 (the index of the first image).
 To see a sample tileset, take a look at tilemap-editor/tileset.png.
+
+# Bugs
+When the program starts, it thinks Ctrl is pressed. Press Ctrl to fix this.
+
+When Ctrl or Shift are pressed, the program sometimes thinks that it's still pressed. To fix this, press them again. 
